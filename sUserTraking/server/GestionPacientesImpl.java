@@ -1,4 +1,4 @@
-package sUserTraking.server;
+package sUserTraking.servidor;
 
 import java.util.ArrayList;
 

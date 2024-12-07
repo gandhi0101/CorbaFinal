@@ -211,7 +211,7 @@ public class GestionPersonalImpl extends GestionPersonalIntPOA{
         System.out.println("En consultarReferenciaRemota");
         try{
             this.ref = GestionPacientesIntHelper.narrow(nce.resolve_str(servicio));
-            System.out.println("Obtenido el manejador sobre el server de objetos: ");
+            System.out.println("Obtenido el manejador sobre el servidor de objetos: ");
         }catch(Exception ex){
             System.out.println("Error: "+ ex.getMessage());
         }  	

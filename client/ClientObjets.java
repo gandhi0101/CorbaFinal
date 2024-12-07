@@ -9,7 +9,7 @@ import org.omg.PortableServer.*;
 
 import client.client.AdmCllbckImpl;
 import client.client.FapCllbckImpl;
-import client.utilidades.UtilidadesConsola;
+import client.utilities.UtilitiesConsl;
 import sUserManagement.sop_corba.*;
 import sUserTraking.sop_corba.*;
 public class ClientObjets {
@@ -65,7 +65,7 @@ public class ClientObjets {
             System.out.println("2. Salir");
             System.out.println("========================");
             System.out.print("Ingrese su opcion: ");
-            opcion = UtilidadesConsola.leerEntero();
+            opcion = UtilitiesConsl.leerEntero();
             switch (opcion) {
                 case 1:
                     Login(ref, ref2, refCllbckAdmin, refCllbckFap);
@@ -87,11 +87,11 @@ public class ClientObjets {
             boolean login = false;
             System.out.println("==Iniciar Sesion==");
             System.out.println("Usuario: ");
-            user = UtilidadesConsola.leerCadena();
+            user = UtilitiesConsl.leerCadena();
             System.out.println("Clave: ");
-            password = UtilidadesConsola.leerCadena();
+            password = UtilitiesConsl.leerCadena();
             System.out.println("ID: ");
-            id = UtilidadesConsola.leerEntero();
+            id = UtilitiesConsl.leerEntero();
             credencialDTO varCredencial = new credencialDTO(user, password, id);
             login = ref.abrirSesion(varCredencial);
             if (login) {
@@ -135,7 +135,7 @@ public class ClientObjets {
             System.out.println("3. Salir");
             System.out.println("========================");
             System.out.print("Ingrese su opcion: ");
-            opcion = UtilidadesConsola.leerEntero();
+            opcion = UtilitiesConsl.leerEntero();
             switch (opcion) {
                 case 1:
                     RegistrarPersonal(ref);
@@ -165,7 +165,7 @@ public class ClientObjets {
                 System.out.println("========================");
                 System.out.print("Ingrese su opcion: ");
                 
-                opc = UtilidadesConsola.leerEntero();
+                opc = UtilitiesConsl.leerEntero();
                 
                 switch (opc) {
                     case 1:
@@ -184,7 +184,7 @@ public class ClientObjets {
             int id = 0;
             do{
                 System.out.println("Ingrese la Identificacion: ");
-                id = UtilidadesConsola.leerEntero();
+                id = UtilitiesConsl.leerEntero();
                 if (id < 1) {
                     System.out.println("La identificacion debe ser mayot a cero (0)");
                 }
@@ -192,7 +192,7 @@ public class ClientObjets {
             String nombre = "";
             do{
                 System.out.println("Ingrese El nombre completo: ");
-                nombre = UtilidadesConsola.leerCadena();
+                nombre = UtilitiesConsl.leerCadena();
                 if (nombre.length() < 2) {
                     System.out.println("El nombre debe contener al menos 2 caracteres");
                 }
@@ -204,7 +204,7 @@ public class ClientObjets {
                 System.out.println("2. Profesional de Acondicionamiento Fisico (PAF)   ");   
                 System.out.println("========================");
                 System.out.print("Ingrese su opcion: ");             
-                opc = UtilidadesConsola.leerEntero();
+                opc = UtilitiesConsl.leerEntero();
                 
                 switch (opc) {
                     case 1:
@@ -221,7 +221,7 @@ public class ClientObjets {
             String usuario = "";
             do{
                 System.out.println("Digite el usuario: ");
-                usuario = UtilidadesConsola.leerCadena();
+                usuario = UtilitiesConsl.leerCadena();
                 if (usuario.length() < 8) {
                     System.out.println("El usuario debe contener al menos 8 caracteres!");
                 }
@@ -229,7 +229,7 @@ public class ClientObjets {
             String clave = "";
             do{
                 System.out.println("Digite la clave: ");
-                clave = UtilidadesConsola.leerCadena();
+                clave = UtilitiesConsl.leerCadena();
                 if (clave.length() < 8) {
                     System.out.println("la clave debe contener al menos 8 caracteres");
                 }
@@ -250,7 +250,7 @@ public class ClientObjets {
     private static void ConsultarPersonal(GestionPersonalInt ref){
         System.out.println("==Consulta de Personal==");
         System.out.println("Ingrese la identificacion: ");
-        int id = UtilidadesConsola.leerEntero();
+        int id = UtilitiesConsl.leerEntero();
         try {
             boolean resultado;
             personalDTOHolder objPersonal = new personalDTOHolder();
@@ -282,7 +282,7 @@ public class ClientObjets {
             System.out.println("3. Salir");
             System.out.println("========================");
             System.out.print("Ingrese su opcion: ");
-            opcion = UtilidadesConsola.leerEntero();
+            opcion = UtilitiesConsl.leerEntero();
             switch (opcion) {
                 case 1:
                     RegistrarUsuario(ref);
@@ -304,11 +304,11 @@ public class ClientObjets {
 			System.out.println("==== Registrar Usuario ====");
 			
             System.out.println("Ingrese el nombre del paciente");
-            String nombreUsuario = UtilidadesConsola.leerCadena();
+            String nombreUsuario = UtilitiesConsl.leerCadena();
             int id = 0;
             do{
                 System.out.println("Ingrese la identificacion");
-                id = UtilidadesConsola.leerEntero();
+                id = UtilitiesConsl.leerEntero();
             }while(id < 1);
             String facultad="";
             int opcion = 0;
@@ -326,7 +326,7 @@ public class ClientObjets {
                 System.out.println("============================");
                 System.out.print("Ingrese su opcion: ");
 
-                opcion = UtilidadesConsola.leerEntero();
+                opcion = UtilitiesConsl.leerEntero();
             }while(opcion < 1 || opcion > 9);
             switch (opcion) {
                 case 1:
@@ -366,7 +366,7 @@ public class ClientObjets {
                 System.out.println("|2. Administrativo    |");
                 System.out.println("=======================");
                 System.out.print("Ingrese su opcion: ");
-                opcion = UtilidadesConsola.leerEntero();
+                opcion = UtilitiesConsl.leerEntero();
             }while(opcion < 1 || opcion > 2);
             String tipoUsuario="";
             switch (opcion) {
@@ -389,13 +389,13 @@ public class ClientObjets {
                 System.out.println("|2. Ninguna 	        |");
                 System.out.println("=========================");
                 System.out.print("Ingrese su opcion: ");
-                opcion = UtilidadesConsola.leerEntero();
+                opcion = UtilitiesConsl.leerEntero();
             }while(opcion < 1 || opcion > 2);
             String patologia="";
             switch (opcion) {
                 case 1:
                     do{
-                        patologia = UtilidadesConsola.leerCadena();
+                        patologia = UtilitiesConsl.leerCadena();
                     }while(patologia.length()<1);
                     break;
                 case 2:
@@ -405,12 +405,12 @@ public class ClientObjets {
             String usuario="";
             do{
                 System.out.println("Ingrese el usuario: ");
-                usuario = UtilidadesConsola.leerCadena();
+                usuario = UtilitiesConsl.leerCadena();
             }while(usuario.length() < 8);
             String clave="";
             do{
                 System.out.println("Ingrese la contraseña: ");
-                clave = UtilidadesConsola.leerCadena();
+                clave = UtilitiesConsl.leerCadena();
             }while(clave.length() < 8);
 
             usuarioDTO nuevoUsuario = new usuarioDTO(id, nombreUsuario, facultad, tipoUsuario, fechaIngreso, patologia, usuario, clave);
@@ -429,7 +429,7 @@ public class ClientObjets {
 	private static void ConsultarUsuario(GestionPersonalInt ref){
         System.out.println("==== Consultar Usuario ====");
 		System.out.println("Ingrese la identificacion: ");
-		int id = UtilidadesConsola.leerEntero();
+		int id = UtilitiesConsl.leerEntero();
 
 		try {
             boolean resultado;
@@ -464,7 +464,7 @@ public class ClientObjets {
             System.out.println("4. Salir");
             System.out.println("========================");
             System.out.print("Ingrese su opcion: ");
-            opcion = UtilidadesConsola.leerEntero();
+            opcion = UtilitiesConsl.leerEntero();
             switch (opcion) {
                 case 1:
                     registrarValoracion(ref, ref2);
@@ -490,7 +490,7 @@ public class ClientObjets {
 			int id=0;
 			do{
 				System.out.println("Ingrese la identificacion");
-				id = UtilidadesConsola.leerEntero();
+				id = UtilitiesConsl.leerEntero();
 			}while(id < 1);
             usuarioDTOHolder varObjUsuario =  new usuarioDTOHolder();
 			if(ref.consultarUsuario(id, varObjUsuario)){
@@ -505,37 +505,37 @@ public class ClientObjets {
 					int fecCarReposo = 0;
 					do{
 						System.out.println("Frecuencia Cardiaca en reposo: ");
-						fecCarReposo = UtilidadesConsola.leerEntero();
+						fecCarReposo = UtilitiesConsl.leerEntero();
 					}while(fecCarReposo < 1);
 					int fecCarActiva = 0;
 					do{
 						System.out.println("Frecuencia Cardiaca Activa: ");
-						fecCarActiva = UtilidadesConsola.leerEntero();
+						fecCarActiva = UtilitiesConsl.leerEntero();
 					}while(fecCarActiva < 1);
 					int estatura = 0;
 					do{
 						System.out.println("Estatura(cm): ");
-						estatura = UtilidadesConsola.leerEntero();
+						estatura = UtilitiesConsl.leerEntero();
 					}while(estatura < 1);
 					int brazo = 0;
 					do{
 						System.out.println("Brazo(cm): ");
-						brazo = UtilidadesConsola.leerEntero();
+						brazo = UtilitiesConsl.leerEntero();
 					}while(brazo < 1);
 					int pierna = 0;
 					do{
 						System.out.println("Pierna(cm): ");
-						pierna = UtilidadesConsola.leerEntero();
+						pierna = UtilitiesConsl.leerEntero();
 					}while(pierna < 1);
 					int pecho = 0;
 					do{
 						System.out.println("Pecho(cm): ");
-						pecho = UtilidadesConsola.leerEntero();
+						pecho = UtilitiesConsl.leerEntero();
 					}while(pecho < 1);
 					int cintura = 0;
 					do{
 						System.out.println("Cintura(cm): ");
-						cintura = UtilidadesConsola.leerEntero();
+						cintura = UtilitiesConsl.leerEntero();
 					}while(cintura < 1);
 					String estado ="";
 					ValoracionDTO objValoracion= new ValoracionDTO(id, fechaValoracion, fecCarReposo, fecCarActiva, estatura, brazo, pierna, pecho, cintura, estado);
@@ -561,7 +561,7 @@ public class ClientObjets {
 			int id=0;
 			do{
 				System.out.println("Ingrese la identificacion: ");
-				id = UtilidadesConsola.leerEntero();
+				id = UtilitiesConsl.leerEntero();
 			}while(id < 1);
             usuarioDTOHolder varObjUsuario = new usuarioDTOHolder();
 			if(ref.consultarUsuario(id, varObjUsuario)){
@@ -573,7 +573,7 @@ public class ClientObjets {
 						do {
 							System.out.println("==== Fecha de Inicio del programa ====");
 							System.out.println("Formato (dd/mm/aa): ");
-							fechaIni = UtilidadesConsola.leerCadena();
+							fechaIni = UtilitiesConsl.leerCadena();
 						} while (fechaIni.length() != 8);
 						ProgramaFisicoDTO objProgSemana;
 						ArrayList<ProgramaDTO> objProgramaSemanal = new ArrayList<ProgramaDTO>();
@@ -588,15 +588,15 @@ public class ClientObjets {
 							for (int j = 0; j < 3; j++) {
 								do {
 									System.out.println("Nombre del ejercicio " + (j+1) + ":");
-									nomEjercicio = UtilidadesConsola.leerCadena();
+									nomEjercicio = UtilitiesConsl.leerCadena();
 								} while (nomEjercicio.length() < 3);
 								do {
 									System.out.println("Repeticiones: ");
-									repeticiones = UtilidadesConsola.leerEntero();
+									repeticiones = UtilitiesConsl.leerEntero();
 								} while (repeticiones < 1);
 								do {
 									System.out.println("Peso: ");
-									peso = UtilidadesConsola.leerEntero();
+									peso = UtilitiesConsl.leerEntero();
 								} while (peso < 3);
 								tmpEjecercicio = new EjercicioDTO(nomEjercicio, repeticiones, peso);
 								tmplstEjercicio.add(tmpEjecercicio);
@@ -640,7 +640,7 @@ public class ClientObjets {
 			int id=0;
 			do{
 				System.out.println("Ingrese la identificacion: ");
-				id = UtilidadesConsola.leerEntero();
+				id = UtilitiesConsl.leerEntero();
 			}while(id < 1);
             usuarioDTOHolder varObjUsuario = new usuarioDTOHolder();
 			if(ref.consultarUsuario(id, varObjUsuario)){
@@ -652,7 +652,7 @@ public class ClientObjets {
 						do {
 							System.out.println("==== Fecha de asistencia ====");
 							System.out.println("Formato (dd/mm/aa): ");
-							fechaAsistencia = UtilidadesConsola.leerCadena();
+							fechaAsistencia = UtilitiesConsl.leerCadena();
 						} while (fechaAsistencia.length() != 8);
 						String observacion ="";
 						int opcion=0;
@@ -664,12 +664,12 @@ public class ClientObjets {
 							System.out.println("|3. Ninguna");
 							System.out.println("============================");
 							System.out.print("Ingrese su opcion: ");
-							opcion = UtilidadesConsola.leerEntero();
+							opcion = UtilitiesConsl.leerEntero();
 						}while(opcion < 1 || opcion > 3);
 						switch (opcion) {
 							case 1:
 								System.out.print("Ingrese la excusa: ");
-								observacion = UtilidadesConsola.leerCadena();
+								observacion = UtilitiesConsl.leerCadena();
 								break;
 							case 2:
 								observacion = "No asiste";
@@ -714,7 +714,7 @@ public class ClientObjets {
 			System.out.println("|4. Salir");
 			System.out.println("========================");
 			System.out.println("Ingrese su opcion: ");
-			opcion = UtilidadesConsola.leerEntero();
+			opcion = UtilitiesConsl.leerEntero();
 			switch(opcion)
 			{
 				case 1:
