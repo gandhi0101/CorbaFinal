@@ -20,8 +20,7 @@ public class ServerObjets {
 			org.omg.CORBA.Object ref = rootpoa.servant_to_reference(pacientesImpl);
 			GestionPacientesInt cref = GestionPacientesIntHelper.narrow(ref);
 
-			org.omg.CORBA.Object objRef =
-					orb.resolve_initial_references("NameService");
+			org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
 			NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 			
 			String name = "objRemotoPacientes";
