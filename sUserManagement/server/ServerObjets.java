@@ -1,4 +1,5 @@
 package sUserTraking.server;
+package sUserManagement.server;
 import sUserManagement.sop_corba.*;
 import org.omg.CORBA.*;
 import org.omg.CosNaming.*;
@@ -27,7 +28,7 @@ public class ServerObjets {
 
 			System.out.println("consultando Referencia Remota...");
 	    	personalImpl.consultarReferenciaRemota(ncRef,"objRemotoPacientes");
-			System.out.println("El server gestion de usuarios Inicio y esta esperando Acciones");
+			System.out.println("El servidor gestion de usuarios Inicio y esta esperando Acciones");
 		    orb.run();
 		}
 

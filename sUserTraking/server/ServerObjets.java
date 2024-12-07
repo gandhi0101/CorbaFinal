@@ -1,4 +1,4 @@
-package sUserTraking.server;
+package sUserTraking.servidor;
 
 import org.omg.CORBA.*;
 import org.omg.CosNaming.*;
@@ -28,7 +28,7 @@ public class ServerObjets {
 			NameComponent path[] = ncRef.to_name(name);
 			ncRef.rebind(path, cref);
 
-			System.out.println("El server gestion de usuarios Inicio y esta esperando Acciones");
+			System.out.println("El servidor gestion de usuarios Inicio y esta esperando Acciones");
 			orb.run();
 		}
 
