@@ -1,5 +1,5 @@
-package sUserTraking.server;
 package sUserManagement.server;
+//import sUserTraking.server;
 import sUserManagement.sop_corba.*;
 import org.omg.CORBA.*;
 import org.omg.CosNaming.*;
@@ -18,8 +18,7 @@ public class ServerObjets {
 		    org.omg.CORBA.Object ref = rootpoa.servant_to_reference(personalImpl);
 		    GestionPersonalInt cref = GestionPersonalIntHelper.narrow(ref);
 
-		    org.omg.CORBA.Object objRef =
-			           orb.resolve_initial_references("NameService");
+		    org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
 		    NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 
 		    String name = "objRemotoPersonal";
